@@ -5,5 +5,8 @@ public class MyClass
     }
 
  int firstVar = 1;
+		
+	 
+ String firstString = sos;
 		}
 	 
