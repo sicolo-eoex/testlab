@@ -55,51 +55,6 @@ export stash_branch="dev-stash"
 export patch_branch="dev-patch"
 
 
-
-export sample_file="testfile.txt"
-export current_branch="$(git rev-parse --abbrev-ref HEAD)"
-echo
-echo
-echo
-echo "############ TEST RUN #################"
-echo "#######################################"
-
-echo
-echo
-echo "----------- CREATE SAMPLE DATA/CODE -------- "
-echo " --- ONE MORE LINE ADDED ---" >> $sample_file
-echo "Tail contents of the data file $sample_file:"
-echo
-tail $sample_file
-
-echo
-echo
-echo "---------- STAGING CHANGES ---------------------"
-GIT_TRACE=1 git add .
-
-echo
-echo
-echo "---------- STASH CHANGES (SAVEPOINT) ---------"
-
-echo
-echo
-echo "---------- COMMIT CHANGES ------------"
-echo "Current Branch: $current_branch"
-git commit -m "Ref: [001] Dom: $current_branch US: XYZ-2 Job: add more data Stamp: $(date)"
-
-echo
-echo
-echo "--------- MERGE CHANGES TO local-main BRANCH ------------"
-previous_branch=$current_branch
-current_branch=$local_main
-
-echo "Previous working branch:	"$previous_branch
-echo "Current working branch:	"$current_branch
-
-git checkout $current_branch
-git merge $previous_branch
-
-
 echo
 echo
 echo
@@ -109,10 +64,10 @@ echo "##############################"
 echo
 echo
 echo "What is the development objective? "
-echo "New Feature 		[1]"
-echo "Bug Fix			[2]"
-echo "New Savepoint (stash)	[3]"
-echo "New Patch			[4]"
+echo "New Feature					[1]"
+echo "Bug Fix						[2]"
+echo "New Savepoint (stash)			[3]"
+echo "New Patch						[4]"
 echo 
 read -p "choose an option: " input
 
@@ -142,6 +97,59 @@ elif [ $input == 4 ];then
 	git checkout $target_branch
 
 fi
+
+
+
+
+
+export sample_file="testfile.txt"
+export current_branch="$(git rev-parse --abbrev-ref HEAD)"
+echo
+echo
+echo
+echo "##############################"
+echo "# BUILD "
+echo "##############################"
+echo
+echo
+
+echo
+echo
+echo "----------- CREATE SAMPLE DATA/CODE -------- "
+echo " --- ONE MORE LINE ADDED ---" >> $sample_file
+echo "Tail contents of the data file $sample_file:"
+echo
+tail $sample_file
+
+echo
+echo
+echo "---------- STAGING CHANGES ---------------------"
+GIT_TRACE=1 git add .
+
+echo
+echo
+echo "---------- STASH CHANGES (SAVEPOINT) ---------"
+
+echo
+echo
+echo "---------- COMMIT CHANGES ------------"
+echo "Current Branch: $current_branch"
+git commit -m "Ref: [002] Dom: $current_branch US: XYZ-2 Job: add more data Stamp: $(date)"
+
+echo
+echo
+echo "--------- MERGE CHANGES TO local-main BRANCH ------------"
+previous_branch=$current_branch
+current_branch=$local_main
+
+echo "Previous working branch:	"$previous_branch
+echo "Current working branch:	"$current_branch
+
+git checkout $current_branch
+git merge $previous_branch
+
+
+
 
 
 ##########################
