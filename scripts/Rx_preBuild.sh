@@ -91,12 +91,7 @@ elif [ $input == 4 ];then
 fi
 
 
-# Fetch remote repo branches
-<<<<<<< HEAD
-git fetch $remote
-=======
-#git fetch $remote
->>>>>>> dev-fix
+
 git fetch --all
 git pull $remote
 git checkout -f $target_branch
@@ -168,8 +163,10 @@ git merge $previous_branch
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
 export merge_summary="Job: MERGE $previous_branch TO $current_branch"
-git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
-<<<<<<< HEAD
-=======
 
->>>>>>> dev-fix
+
+
+echo
+echo
+echo "GIT COMMIT HISTORY"
+git log --pretty=format:"%h - %an, %ar : %s"
