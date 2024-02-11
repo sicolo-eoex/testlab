@@ -27,12 +27,6 @@ export staging="staging"
 export remote="$(git remote)"
 
 
-# Fetch remote repo branches
-git fetch $remote
-git fetch --all
-git pull $remote
-
-
 # local remote repo branches
 export remote_main="$remote/$main"
 export remote_prod="$remote/$prod"
@@ -74,27 +68,37 @@ then
         export target_branch=$feature_branch
 	
 	echo "Make your development feature changes..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 elif [ $input == 2 ];then
         export target_branch=$fix_branch
 
 	echo "Make your development fix changes..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 elif [ $input == 3 ];then
         export target_branch=$stash_branch
 
 	echo "Creating a Savepoint (stash) for your current work..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 elif [ $input == 4 ];then
         export target_branch=$patch_branch
 
 	echo "Creating a new Patch..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 fi
+
+
+# Fetch remote repo branches
+git fetch $remote
+git fetch --all
+git pull $remote
+git checkout $target_branch
+
+
+
 
 
 #export sample_file="testfile.txt"
