@@ -97,7 +97,8 @@ elif [ $input == 4 ];then
 fi
 
 
-export sample_file="testfile.txt"
+#export sample_file="testfile.txt"
+export sample_file="../src/MyClass.java"
 export current_branch="$(git rev-parse --abbrev-ref HEAD)"
 echo
 echo
@@ -111,7 +112,9 @@ echo
 echo
 echo
 echo "----------- CREATE SAMPLE DATA/CODE -------- "
-echo " --- ONE MORE LINE ADDED ---" >> $sample_file
+echo " int firstVar = 1;
+		}
+	 " >> $sample_file
 echo "Tail contents of the data file $sample_file:"
 echo
 tail $sample_file
