@@ -97,9 +97,6 @@ elif [ $input == 4 ];then
 fi
 
 
-
-<<<<<<< HEAD
-=======
 export sample_file="testfile.txt"
 export current_branch="$(git rev-parse --abbrev-ref HEAD)"
 echo
@@ -169,7 +166,13 @@ echo "Current working branch:	"$current_branch
 
 
 git checkout $current_branch
+
+git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 git merge $previous_branch
+
+#git push remote-testlab HEAD:main
+
+
 
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
