@@ -187,4 +187,55 @@ export merge_summary="Job: MERGE $previous_branch TO $current_branch"
 git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
 
 
+git push $remote HEAD:$main
+
+
+
+##########################
+## OUTPUT
+##########################
+clear
+echo
+echo
+echo "Rx Branching strategy"
+echo "----------------------------------------------"
+echo
+echo "Local Tracking Branches"
+echo "Main:		" $local_main
+echo "Production:	" $local_prod
+echo "UAT:		" $local_uat
+echo "Release:		" $local_release
+echo "Staging:		" $local_staging
+echo
+echo
+echo "-----------------------------------------------"
+echo
+echo "Remote Repo Branches"
+echo "Main:             " $remote_main
+echo "Production:       " $remote_prod
+echo "UAT:              " $remote_uat
+echo "Release:          " $remote_release
+echo "Staging:          " $remote_staging
+echo
+echo
+echo "-------------------------------------------------"
+echo
+echo "Local Development Branches:"
+echo "Feature Branch:	" $feature_branch
+echo "Fix Branch:	" $fix_branch
+echo "Stash Branch:	" $stash_branch
+echo "Patch Branch:	" $patch_branch
+
+
+echo
+echo
+echo "ALL BRANCHES"
+# git remote -v
+# git branch -a
+git branch -vv
+
+echo
+echo
+echo "GIT COMMIT HISTORY"
+git log --pretty=format:"%h - %an, %ar : %s"
 

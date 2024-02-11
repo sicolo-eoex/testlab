@@ -10,3 +10,9 @@ public class MyClass
  String firstString = sos;
 		}
 	 
+<<<<<<< HEAD
+=======
+ String firstString = sos;
+		}
+	 
+>>>>>>> dev-feature
