@@ -92,9 +92,9 @@ fi
 
 
 # Fetch remote repo branches
-git fetch $remote
-git fetch --all
-git pull $remote
+# git fetch $remote
+# git fetch --all
+# git pull $remote
 
 
 git checkout -f $target_branch
