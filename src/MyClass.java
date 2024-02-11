@@ -16,3 +16,7 @@ public class MyClass
  String firstString = sos;
 		}
 	 
+ --- ONE MORE LINE ADDED ---
+ String firstString = sos;
+		}
+	 
