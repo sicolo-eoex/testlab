@@ -41,3 +41,9 @@ Tail contents of the data file testfile.txt:
 
 
 ---------- STAGING CHANGES ---------------------
+
+
+---------- STASH CHANGES (SAVEPOINT) ---------
+
+
+---------- COMMIT CHANGES ------------
