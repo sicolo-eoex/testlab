@@ -93,16 +93,14 @@ fi
 
 # Fetch remote repo branches
 git fetch $remote
-echo "bug: fetch $remote"
 git fetch --all
-echo "bug: fetch --all"
 git pull $remote
-echo "bug: pull $remote"
 git checkout -f $target_branch
-echo "bug: checkout $target_branch"
 
 
 
+export sample_file="testfile.txt"
+export current_branch="$(git rev-parse --abbrev-ref HEAD)"
 
 
 
