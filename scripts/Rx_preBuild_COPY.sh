@@ -167,7 +167,7 @@ echo "Previous working branch:	"$previous_branch
 echo "Current working branch:	"$current_branch
 
 
-git push $remote HEAD:$main
+
 
 git checkout $current_branch
 git merge $previous_branch
@@ -178,6 +178,7 @@ export merge_summary="Job: MERGE $previous_branch TO $current_branch"
 git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
 
 
+git push $remote HEAD:$main
 
 
 
