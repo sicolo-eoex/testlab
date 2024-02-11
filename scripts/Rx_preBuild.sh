@@ -92,18 +92,77 @@ fi
 
 
 # Fetch remote repo branches
-git fetch $remote
-echo "bug: fetch $remote"
+#git fetch $remote
 git fetch --all
-echo "bug: fetch --all"
 git pull $remote
-echo "bug: pull $remote"
 git checkout -f $target_branch
-echo "bug: checkout $target_branch"
 
 
 
+export sample_file="testfile.txt"
+export current_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+echo
+echo
+echo
+echo "##############################"
+echo "# BUILD "
+echo "##############################"
+echo
+echo
+
+echo
+echo
+echo "----------- CREATE SAMPLE DATA/CODE -------- "
+echo " --- ONE MORE LINE ADDED ---" >> $sample_file
+echo "Tail contents of the data file $sample_file:"
+echo
+tail $sample_file
+
+echo
+echo
+echo "---------- STAGING CHANGES ---------------------"
+git add .
+
+echo
+echo
+echo "---------- COMMIT CHANGES ------------"
+
+read -p "Enter commit reference: 	" reference
+read -p "Enter commit version:		" version
+read -p "Enter User Story code:		" us_code
+read -p "Enter User Story summary:	" us_summary
+
+export commit_ref="Ref: [$reference]"
+export commit_dom="Dom: $current_branch"
+export commit_US="US: $us_code"
+export commit_job="Job: $us_summary"
+export commit_stamp="Stamp: $(date)"
+
+echo "Current Branch: $current_branch"
+git fetch --all
+git pull
+git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
+export current_commit_hash=$(git rev-parse --short HEAD)
+echo "Current commit HASH:	" $current_commit_hash
+git tag -a $current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
 
 
+echo
+echo
+echo "--------- MERGE CHANGES TO local-main BRANCH ------------"
+previous_branch=$current_branch
+current_branch=$local_main
 
+echo "Previous working branch:	"$previous_branch
+echo "Current working branch:	"$current_branch
+
+
+git checkout $current_branch
+git merge $previous_branch
+
+export current_commit_hash=$(git rev-parse --short HEAD)
+echo "Current commit HASH:	" $current_commit_hash
+export merge_summary="Job: MERGE $previous_branch TO $current_branch"
+git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
 
