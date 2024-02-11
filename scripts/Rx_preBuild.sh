@@ -112,7 +112,7 @@ echo
 echo
 echo
 echo "----------- CREATE SAMPLE DATA/CODE -------- "
-echo " int firstVar = 1;
+echo " String firstString = "sos";
 		}
 	 " >> $sample_file
 echo "Tail contents of the data file $sample_file:"
