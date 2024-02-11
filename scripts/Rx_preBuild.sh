@@ -75,7 +75,7 @@ tail $sample_file
 echo
 echo
 echo "---------- STAGING CHANGES ---------------------"
-git add .
+GIT_TRACE=1 git add .
 
 echo
 echo
@@ -85,7 +85,7 @@ echo
 echo
 echo "---------- COMMIT CHANGES ------------"
 echo "Current Branch: $current_branch"
-git commit -m "Ref: [000] Dom: $current_branch US: XYZ-1 Job: Create sample data Stamp: $(date)"
+git commit -m "Ref: [001] Dom: $current_branch US: XYZ-2 Job: add more data Stamp: $(date)"
 
 echo
 echo
