@@ -19,3 +19,6 @@ public class MyClass
  String firstString = sos;
 		}
 	 
+ String firstString = sos;
+		}
+	 
