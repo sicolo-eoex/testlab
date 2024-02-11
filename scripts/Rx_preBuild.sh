@@ -91,13 +91,13 @@ elif [ $input == 4 ];then
 fi
 
 
-git add .
-git commit -m "dump"
-
 # Fetch remote repo branches
 git fetch $remote
 git fetch --all
 git pull $remote
+
+git add .
+git commit -m "dump"
 git checkout $target_branch
 
 
