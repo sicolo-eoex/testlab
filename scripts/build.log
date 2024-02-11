@@ -37,3 +37,39 @@ Tail contents of the data file testfile.txt:
 
 
 ---------- STAGING CHANGES ---------------------
+
+
+---------- STASH CHANGES (SAVEPOINT) ---------
+
+
+---------- COMMIT CHANGES ------------
+Current Branch: dev-feature
+Fetching remote-testlab
+[dev-feature 754e758] Ref: [001] Dom: dev-feature US: 213 Job: fhgf Stamp: dom 11 feb 2024 20:39:41 CET
+ 5 files changed, 10 insertions(+), 2 deletions(-)
+ create mode 100644 scripts/.Rx_preBuild_COPY.sh.kate-swp
+Current commit HASH:	 754e758
+
+
+Show tags
+dev-feature-v1.000-456
+dev-feature-v1.001-213
+dev-feature-v1.001-325
+dev-feature-v1.001-562
+feat-v0.1
+feat-v1.1
+feat-v1.2
+feat-v1.3
+feat-v2.1
+feat-v2.2
+feat-v2.3
+local-main-MERGETO-local-main-v1.1-123
+local-main-v1.1-123
+push-to-repo-v1.1
+
+
+--------- MERGE CHANGES TO local-main BRANCH ------------
+Previous working branch:	dev-feature
+Current working branch:	local-main
+Already up to date.
+Current commit HASH:	 754e758
