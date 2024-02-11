@@ -15,4 +15,13 @@ public class MyClass
  String firstString = sos;
 		}
 	 
+<<<<<<< HEAD
 >>>>>>> dev-feature
+=======
+ String firstString = sos;
+		}
+	 
+>>>>>>> dev-feature
+ String firstString = sos;
+		}
+	 
