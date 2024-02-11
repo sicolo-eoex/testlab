@@ -1,0 +1,107 @@
+Fetching remote-testlab
+
+
+
+############ TEST RUN #################
+#######################################
+
+
+----------- CREATE SAMPLE DATA/CODE -------- 
+Tail contents of the data file testfile.txt:
+
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+ --- ONE MORE LINE ADDED ---
+
+
+---------- STASH CHANGES (SAVEPOINT) ---------
+
+
+---------- COMMIT CHANGES ------------
+Current Branch: dev-stash
+On branch dev-stash
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	./
+	../src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+--------- MERGE CHANGES TO local-main BRANCH ------------
+Previous working branch:	dev-stash
+Current working branch:	local-main
+Your branch is up to date with 'remote-testlab/main'.
+Already up to date.
+
+
+
+##############################
+# Pre-build setup
+##############################
+
+
+What is the development objective? 
+New Feature 		[1]
+Bug Fix			[2]
+New Savepoint (stash)	[3]
+New Patch			[4]
+
+Creating a new Patch...
+[H[2J[3J
+
+Rx Branching strategy
+----------------------------------------------
+
+Local Environment
+Main:		 local-main
+Production:	 local-production
+UAT:		 local-uat
+Release:		 local-release
+Staging:		 local-staging
+
+
+-----------------------------------------------
+
+Remote Environment
+Main:              remote-testlab/main
+Production:        remote-testlab/production
+UAT:               remote-testlab/uat
+Release:           remote-testlab/release
+Staging:           remote-testlab/staging
+
+
+Remote Repo: 
+remote-testlab	https://github.com/sicolo-eoex/testlab.git (fetch)
+remote-testlab	https://github.com/sicolo-eoex/testlab.git (push)
+  dev-feature
+  dev-fix
+* dev-patch
+  dev-stash
+  local-main
+  local-production
+  local-release
+  local-staging
+  local-uat
+  remotes/remote-testlab/dev-feature
+  remotes/remote-testlab/main
+  remotes/remote-testlab/production
+  remotes/remote-testlab/release
+  remotes/remote-testlab/staging
+  remotes/remote-testlab/uat
+  dev-feature      c45d33a Initial commit
+  dev-fix          c45d33a Initial commit
+* dev-patch        c45d33a Initial commit
+  dev-stash        c45d33a Initial commit
+  local-main       c45d33a [remote-testlab/main] Initial commit
+  local-production c45d33a [remote-testlab/production] Initial commit
+  local-release    c45d33a [remote-testlab/release] Initial commit
+  local-staging    c45d33a [remote-testlab/staging] Initial commit
+  local-uat        c45d33a [remote-testlab/uat] Initial commit
