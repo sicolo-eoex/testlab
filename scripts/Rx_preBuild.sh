@@ -133,8 +133,28 @@ echo "---------- STASH CHANGES (SAVEPOINT) ---------"
 echo
 echo
 echo "---------- COMMIT CHANGES ------------"
+
+read -p "Enter commit reference: 	" reference
+read -p "Enter commit version:		" version
+read -p "Enter User Story code:		" us_code
+read -p "Enter User Story summary:	" us_summary
+
+export commit_ref="Ref: [$reference]"
+export commit_dom="Dom: $current_branch"
+export commit_US="US: $us_code"
+export commit_job="Job: $us_summary"
+export commit_stamp="Stamp: $(date)"
+
 echo "Current Branch: $current_branch"
-git commit -m "Ref: [002] Dom: $current_branch US: XYZ-2 Job: add more data Stamp: $(date)"
+git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
+export current_commit_hash=$(git rev-parse --short HEAD)
+echo "Current commit HASH:	" $current_commit_hash
+git tag -a $current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
+
+echo
+echo
+echo "Show tags"
+git tag
 
 echo
 echo
@@ -147,6 +167,11 @@ echo "Current working branch:	"$current_branch
 
 git checkout $current_branch
 git merge $previous_branch
+
+export current_commit_hash=$(git rev-parse --short HEAD)
+echo "Current commit HASH:	" $current_commit_hash
+export merge_summary="Job: MERGE $previous_branch TO $current_branch"
+git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
 
 
 

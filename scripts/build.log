@@ -14,7 +14,7 @@ Bug Fix						[2]
 New Savepoint (stash)			[3]
 New Patch						[4]
 
-Creating a new Patch...
+Make your development feature changes...
 
 
 
@@ -41,73 +41,3 @@ Tail contents of the data file testfile.txt:
 
 
 ---------- STAGING CHANGES ---------------------
-
-
----------- STASH CHANGES (SAVEPOINT) ---------
-
-
----------- COMMIT CHANGES ------------
-Current Branch: local-main
-[local-main 3471050] Ref: [002] Dom: local-main US: XYZ-2 Job: add more data Stamp: dom 11 feb 2024 19:35:15 CET
- 2 files changed, 2 insertions(+), 1 deletion(-)
-
-
---------- MERGE CHANGES TO local-main BRANCH ------------
-Previous working branch:	local-main
-Current working branch:	local-main
-M	scripts/build.log
-Your branch is ahead of 'remote-testlab/main' by 6 commits.
-  (use "git push" to publish your local commits)
-Already up to date.
-[H[2J[3J
-
-Rx Branching strategy
-----------------------------------------------
-
-Local Tracking Branches
-Main:		 local-main
-Production:	 local-production
-UAT:		 local-uat
-Release:		 local-release
-Staging:		 local-staging
-
-
------------------------------------------------
-
-Remote Repo Branches
-Main:              remote-testlab/main
-Production:        remote-testlab/production
-UAT:               remote-testlab/uat
-Release:           remote-testlab/release
-Staging:           remote-testlab/staging
-
-
--------------------------------------------------
-
-Local Development Branches:
-Feature Branch:	 dev-feature
-Fix Branch:	 dev-fix
-Stash Branch:	 dev-stash
-Patch Branch:	 dev-stash
-
-
-ALL BRANCHES
-  dev-feature      c45d33a Initial commit
-  dev-fix          c45d33a Initial commit
-  dev-patch        ff73336 Ref: [000] Dom: dev-patch US: XYZ-1 Job: Create sample data Stamp: dom 11 feb 2024 19:11:08 CET
-  dev-stash        c45d33a Initial commit
-* local-main       3471050 [remote-testlab/main: ahead 6] Ref: [002] Dom: local-main US: XYZ-2 Job: add more data Stamp: dom 11 feb 2024 19:35:15 CET
-  local-production c45d33a [remote-testlab/production] Initial commit
-  local-release    c45d33a [remote-testlab/release] Initial commit
-  local-staging    c45d33a [remote-testlab/staging] Initial commit
-  local-uat        c45d33a [remote-testlab/uat] Initial commit
-
-
-GIT COMMIT HISTORY
-3471050 - Sosthene, 0 seconds ago : Ref: [002] Dom: local-main US: XYZ-2 Job: add more data Stamp: dom 11 feb 2024 19:35:15 CET
-ab07b3c - Sosthene, 8 seconds ago : Ref: [002] Dom: local-main US: XYZ-2 Job: add more data Stamp: dom 11 feb 2024 19:35:07 CET
-d59278a - Sosthene, 34 seconds ago : Ref: [002] Dom: local-main US: XYZ-2 Job: add more data Stamp: dom 11 feb 2024 19:34:41 CET
-a1eab74 - Sosthene, 3 minutes ago : Ref: [001] Dom: local-main US: XYZ-2 Job: add more data Stamp: dom 11 feb 2024 19:31:49 CET
-cd5e624 - Sosthene, 14 minutes ago : Ref: [001] Dom: local-main US: XYZ-2 Job: add more data Stamp: dom 11 feb 2024 19:21:25 CET
-ff73336 - Sosthene, 24 minutes ago : Ref: [000] Dom: dev-patch US: XYZ-1 Job: Create sample data Stamp: dom 11 feb 2024 19:11:08 CET
-c45d33a - Sicolo School of Code, 2 days ago : Initial commit
