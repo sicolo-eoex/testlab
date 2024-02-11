@@ -11,6 +11,7 @@ public class MyClass
 		}
 	 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  String firstString = sos;
 		}
@@ -22,6 +23,32 @@ public class MyClass
 		}
 	 
 >>>>>>> dev-feature
+=======
+ String firstString = sos;
+		}
+	 
+ String firstString = sos;
+		}
+	 
+ String firstString = sos;
+		}
+	 
+ String firstString = sos;
+		}
+	 
+ String firstString = sos;
+		}
+	 
+ String firstString = sos;
+		}
+	 
+ String firstString = sos;
+		}
+	 
+ String firstString = sos;
+		}
+	 
+>>>>>>> dev-fix
  String firstString = sos;
 		}
 	 
