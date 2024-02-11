@@ -151,3 +151,21 @@ echo
 echo
 echo "Show tags"
 git tag
+
+
+
+echo
+echo
+echo "--------- MERGE CHANGES TO local-main BRANCH ------------"
+previous_branch=$current_branch
+current_branch=$local_main
+
+echo "Previous working branch:	"$previous_branch
+echo "Current working branch:	"$current_branch
+
+
+git push $remote HEAD:$main
+
+
+
+

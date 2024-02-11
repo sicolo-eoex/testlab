@@ -14,6 +14,8 @@ New Savepoint (stash)			[3]
 New Patch						[4]
 
 Make your development feature changes...
+M	scripts/Rx_preBuild.sh
+M	scripts/build.log
 
 
 
@@ -27,6 +29,7 @@ Make your development feature changes...
 ----------- CREATE SAMPLE DATA/CODE -------- 
 Tail contents of the data file testfile.txt:
 
+ --- ONE MORE LINE ADDED ---
  --- ONE MORE LINE ADDED ---
 
 
