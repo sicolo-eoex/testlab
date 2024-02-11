@@ -90,14 +90,8 @@ elif [ $input == 4 ];then
 
 fi
 
-export sample_file="testfile.txt"
-export current_branch="$(git rev-parse --abbrev-ref HEAD)"
 
-# Fetch remote repo branches
 git checkout $target_branch
-
-
-
 
 
 #export sample_file="testfile.txt"
@@ -115,7 +109,6 @@ echo
 echo
 echo
 echo "----------- CREATE SAMPLE DATA/CODE -------- "
-echo " --- ONE MORE LINE ADDED ---" >> $sample_file
 echo " String firstString = "sos";
 		}
 	 " >> $sample_file
@@ -127,11 +120,6 @@ echo
 echo
 echo "---------- STAGING CHANGES ---------------------"
 git add .
-git add .
-
-echo
-echo
-echo "---------- STASH CHANGES (SAVEPOINT) ---------"
 
 echo
 echo
@@ -149,12 +137,10 @@ export commit_job="Job: $us_summary"
 export commit_stamp="Stamp: $(date)"
 
 echo "Current Branch: $current_branch"
-
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
 git tag -a $current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
-
 
 echo
 echo
@@ -167,14 +153,14 @@ echo "Current working branch:	"$current_branch
 
 
 git checkout $current_branch
+
+git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 git merge $previous_branch
+
 
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
 export merge_summary="Job: MERGE $previous_branch TO $current_branch"
-
-git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
-git merge $previous_branch
 git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
 
 
