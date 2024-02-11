@@ -91,6 +91,7 @@ elif [ $input == 4 ];then
 fi
 
 
+<<<<<<< HEAD
 
 git fetch --all
 git pull $remote
@@ -101,6 +102,21 @@ git checkout -f $target_branch
 export sample_file="testfile.txt"
 export current_branch="$(git rev-parse --abbrev-ref HEAD)"
 
+=======
+# Fetch remote repo branches
+git fetch $remote
+git fetch --all
+git pull $remote
+git checkout $target_branch
+
+
+
+
+
+#export sample_file="testfile.txt"
+export sample_file="../src/MyClass.java"
+export current_branch="$(git rev-parse --abbrev-ref HEAD)"
+>>>>>>> dev-stash
 echo
 echo
 echo
@@ -113,7 +129,13 @@ echo
 echo
 echo
 echo "----------- CREATE SAMPLE DATA/CODE -------- "
+<<<<<<< HEAD
 echo " --- ONE MORE LINE ADDED ---" >> $sample_file
+=======
+echo " String firstString = "sos";
+		}
+	 " >> $sample_file
+>>>>>>> dev-stash
 echo "Tail contents of the data file $sample_file:"
 echo
 tail $sample_file
@@ -121,7 +143,15 @@ tail $sample_file
 echo
 echo
 echo "---------- STAGING CHANGES ---------------------"
+<<<<<<< HEAD
 git add .
+=======
+GIT_TRACE=1 git add .
+
+echo
+echo
+echo "---------- STASH CHANGES (SAVEPOINT) ---------"
+>>>>>>> dev-stash
 
 echo
 echo
@@ -139,13 +169,27 @@ export commit_job="Job: $us_summary"
 export commit_stamp="Stamp: $(date)"
 
 echo "Current Branch: $current_branch"
+<<<<<<< HEAD
 git fetch --all
 git pull
+=======
+#git fetch --all
+#git pull
+>>>>>>> dev-stash
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
 git tag -a $current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
 
+<<<<<<< HEAD
+=======
+echo
+echo
+echo "Show tags"
+git tag
+
+
+>>>>>>> dev-stash
 
 echo
 echo
@@ -158,6 +202,7 @@ echo "Current working branch:	"$current_branch
 
 
 git checkout $current_branch
+<<<<<<< HEAD
 git merge $previous_branch
 
 export current_commit_hash=$(git rev-parse --short HEAD)
@@ -170,3 +215,20 @@ echo
 echo
 echo "GIT COMMIT HISTORY"
 git log --pretty=format:"%h - %an, %ar : %s"
+=======
+
+git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
+git merge $previous_branch
+
+#git push remote-testlab HEAD:main
+
+
+
+export current_commit_hash=$(git rev-parse --short HEAD)
+echo "Current commit HASH:	" $current_commit_hash
+export merge_summary="Job: MERGE $previous_branch TO $current_branch"
+git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
+
+
+
+>>>>>>> dev-stash

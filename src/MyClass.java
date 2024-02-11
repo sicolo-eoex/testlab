@@ -12,6 +12,7 @@ public class MyClass
 	 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  String firstString = sos;
 		}
@@ -52,3 +53,5 @@ public class MyClass
  String firstString = sos;
 		}
 	 
+=======
+>>>>>>> dev-stash
