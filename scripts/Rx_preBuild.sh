@@ -91,14 +91,7 @@ elif [ $input == 4 ];then
 fi
 
 
-# Fetch remote repo branches
-git fetch $remote
-git fetch --all
-git pull $remote
 git checkout $target_branch
-
-
-
 
 
 #export sample_file="testfile.txt"
@@ -126,11 +119,7 @@ tail $sample_file
 echo
 echo
 echo "---------- STAGING CHANGES ---------------------"
-GIT_TRACE=1 git add .
-
-echo
-echo
-echo "---------- STASH CHANGES (SAVEPOINT) ---------"
+git add .
 
 echo
 echo
@@ -148,19 +137,10 @@ export commit_job="Job: $us_summary"
 export commit_stamp="Stamp: $(date)"
 
 echo "Current Branch: $current_branch"
-#git fetch --all
-#git pull
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
 git tag -a $current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
-
-echo
-echo
-echo "Show tags"
-git tag
-
-
 
 echo
 echo
@@ -177,9 +157,6 @@ git checkout $current_branch
 git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 git merge $previous_branch
 
-#git push remote-testlab HEAD:main
-
-
 
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
@@ -188,3 +165,7 @@ git tag -a $previous_branch-MERGETO-$current_branch-v$version.$reference-$us_cod
 
 
 
+echo
+echo
+echo "GIT COMMIT HISTORY"
+git log --pretty=format:"%h - %an, %ar : %s"
