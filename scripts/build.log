@@ -15,6 +15,7 @@ New Patch						[4]
 
 Make your development feature changes...
 M	scripts/Rx_preBuild.sh
+M	scripts/Rx_preBuild_COPY.sh
 M	scripts/build.log
 
 
@@ -29,6 +30,7 @@ M	scripts/build.log
 ----------- CREATE SAMPLE DATA/CODE -------- 
 Tail contents of the data file testfile.txt:
 
+ --- ONE MORE LINE ADDED ---
  --- ONE MORE LINE ADDED ---
  --- ONE MORE LINE ADDED ---
 

@@ -145,6 +145,8 @@ export commit_job="Job: $us_summary"
 export commit_stamp="Stamp: $(date)"
 
 echo "Current Branch: $current_branch"
+git fetch --all
+git pull
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
