@@ -96,9 +96,8 @@ git fetch $remote
 git fetch --all
 git pull $remote
 
-git add .
-git commit -m "dump"
-git checkout $target_branch
+
+git checkout -f $target_branch
 
 
 
