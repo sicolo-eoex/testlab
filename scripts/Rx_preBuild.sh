@@ -27,12 +27,6 @@ export staging="staging"
 export remote="$(git remote)"
 
 
-# Fetch remote repo branches
-git fetch $remote
-git fetch --all
-git pull $remote
-
-
 # local remote repo branches
 export remote_main="$remote/$main"
 export remote_prod="$remote/$prod"
@@ -74,31 +68,41 @@ then
         export target_branch=$feature_branch
 	
 	echo "Make your development feature changes..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 elif [ $input == 2 ];then
         export target_branch=$fix_branch
 
 	echo "Make your development fix changes..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 elif [ $input == 3 ];then
         export target_branch=$stash_branch
 
 	echo "Creating a Savepoint (stash) for your current work..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 elif [ $input == 4 ];then
         export target_branch=$patch_branch
 
 	echo "Creating a new Patch..."
-	git checkout $target_branch
+	#git checkout $target_branch
 
 fi
 
 
+# Fetch remote repo branches
+git fetch $remote
+git fetch --all
+git pull $remote
+git checkout $target_branch
 
-export sample_file="testfile.txt"
+
+
+
+
+#export sample_file="testfile.txt"
+export sample_file="../src/MyClass.java"
 export current_branch="$(git rev-parse --abbrev-ref HEAD)"
 echo
 echo
@@ -112,7 +116,9 @@ echo
 echo
 echo
 echo "----------- CREATE SAMPLE DATA/CODE -------- "
-echo " --- ONE MORE LINE ADDED ---" >> $sample_file
+echo " String firstString = "sos";
+		}
+	 " >> $sample_file
 echo "Tail contents of the data file $sample_file:"
 echo
 tail $sample_file
@@ -142,8 +148,8 @@ export commit_job="Job: $us_summary"
 export commit_stamp="Stamp: $(date)"
 
 echo "Current Branch: $current_branch"
-git fetch --all
-git pull
+#git fetch --all
+#git pull
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
@@ -167,7 +173,13 @@ echo "Current working branch:	"$current_branch
 
 
 git checkout $current_branch
+
+git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 git merge $previous_branch
+
+#git push remote-testlab HEAD:main
+
+
 
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
