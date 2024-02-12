@@ -14,6 +14,7 @@
  *  of the program and the resulting output. We will always include such
  *  lines in our programs and encourage you to do the same.
  *
+ * Sosthene
  ******************************************************************************/
 
  public class HelloWorld {
