@@ -6,6 +6,42 @@ clear
 export project_dir="/home/eoex/Documents/Rx/DOJO/TEMP"
 export script_dir="/home/eoex/Documents/Rx/DOJO/scripts"
 
+
+# environment variables
+export main="main"
+export prod="production"
+export uat="uat"
+export release="release"
+export staging="staging"
+
+# setup the remote repo (Github)
+export remote="$(git remote)"
+
+
+# local remote repo branches
+export remote_main="$remote/$main"
+export remote_prod="$remote/$prod"
+export remote_uat="$remote/$uat"
+export remote_release="$remote/$release"
+export remote_staging="$remote/$staging"
+
+# local tracking branches
+export local_main="local-$main"
+export local_prod="local-$prod"
+export local_uat="local-$uat"
+export local_release="local-$release"
+export local_staging="local-$staging"
+
+# local development branches
+export feature_branch="dev-feature"
+export fix_branch="dev-fix"
+export stash_branch="dev-stash"
+export patch_branch="dev-patch"
+
+
+
+
+
 cd $project_dir
 chmod u+x $script_dir/*sh
 
@@ -147,6 +183,9 @@ export commit_stamp="Stamp: $(date)"
 
 $current_branch=$target_branch
 echo "Current Branch: $current_branch"
+echo
+echo
+
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
@@ -170,8 +209,8 @@ git tag
 # Move back into the local-main branch
 echo
 echo
-echo "Moving to local-main branch"
-git checkout local-main 
+echo "Moving to $local_main branch"
+git checkout $local_main 
 
 # Merge the last development branch onto local-main
 echo
@@ -180,6 +219,6 @@ echo "Merging last dev into local-main branch"
 git merge $current_branch 		## NOTE: this should automatically update the remote repo because this branch is tracking remote/main
 
 # Push latest changes from local-main to remote repo
-git push remote-testlab HEAD
+git push $remote HEAD
 
 git log --pretty=format:"%h - %an, %ar : %s"
