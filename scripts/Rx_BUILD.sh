@@ -173,3 +173,4 @@ git push remote-testlab HEAD
 
 git log --pretty=format:"%h - %an, %ar : %s"
 
+cat ../build.log
