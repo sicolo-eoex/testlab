@@ -14,16 +14,13 @@
  *  of the program and the resulting output. We will always include such
  *  lines in our programs and encourage you to do the same.
  *
- * Sosthene
  ******************************************************************************/
 
  public class HelloWorld {
 
-    public HelloWorld() {
-    }
-
     public static void main(String[] args) 
     {
+
         // Prints "Hello, World" in the terminal window.
         System.out.println("Hello, World");
     }
