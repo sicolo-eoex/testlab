@@ -172,5 +172,3 @@ git merge dev-feature 		## NOTE: this should automatically update the remote rep
 git push remote-testlab HEAD
 
 git log --pretty=format:"%h - %an, %ar : %s"
-
-cat /home/eoex/Documents/Rx/build.log
