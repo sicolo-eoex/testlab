@@ -16,7 +16,7 @@ chmod u+x $script_dir/*sh
 $script_dir/./Rx_branches.sh 
 
 # Check all branches status
-git branch -vv
+# git branch -vv
  
 # Check local dev branches
 git checkout dev-feature 
@@ -25,7 +25,7 @@ git checkout dev-stash
 git checkout dev-patch
 
 # Check all branches status
-git branch -vv
+# git branch -vv
 
 # Fetch latest updates updates from remote repo
 git fetch --all
