@@ -159,6 +159,7 @@ git checkout $current_branch
 echo
 echo
 echo "[>> GIT PULL $REMOTE <<]"
+git config pull.rebase true   # rebase
 git pull $remote $previous_branch --allow-unrelated-histories
 
 echo
