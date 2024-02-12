@@ -65,7 +65,7 @@ echo
 echo "What is the development objective? "
 echo "New Feature					[1]"
 echo "Bug Fix						[2]"
-echo "New Savepoint (stash)		[3]"
+echo "New Savepoint (stash)			[3]"
 echo "New Patch					[4]"
 echo 
 read -p "choose an option: " input
@@ -94,7 +94,6 @@ elif [ $input == 4 ];then
 
 	echo "Creating a new Patch..."
 	git checkout $target_branch
-
 fi
 
 
