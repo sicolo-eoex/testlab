@@ -161,7 +161,7 @@ git checkout $current_branch
 echo
 echo
 echo "[>> GIT PULL $REMOTE <<]"
-git pull $remote main --allow-unrelated-histories
+git pull $remote $previous_branch --allow-unrelated-histories
 
 echo
 echo
