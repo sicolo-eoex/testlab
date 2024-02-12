@@ -95,7 +95,8 @@ git checkout $target_branch
 
 
 #export sample_file="testfile.txt"
-export sample_file="../src/MyClass.java"
+export GIT_PROJECT_FOLDER="~/Documents/Rx/TEMP"
+export sample_file="$GIT_PROJECT_FOLDER/src/MyClass.java"
 export current_branch="$(git rev-parse --abbrev-ref HEAD)"
 echo
 echo
