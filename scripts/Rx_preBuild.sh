@@ -109,9 +109,7 @@ echo
 echo
 echo
 echo "----------- CREATE SAMPLE DATA/CODE -------- "
-echo " String firstString = "sos";
-		}
-	 " >> $sample_file
+echo " NEW LINE	 " >> $sample_file
 echo "Tail contents of the data file $sample_file:"
 echo
 tail $sample_file
