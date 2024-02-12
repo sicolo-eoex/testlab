@@ -144,6 +144,8 @@ export commit_US="US: $us_code"
 export commit_job="Job: $us_summary"
 export commit_stamp="Stamp: $(date)"
 
+
+$current_branch=$target_branch
 echo "Current Branch: $current_branch"
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 export current_commit_hash=$(git rev-parse --short HEAD)
@@ -160,13 +162,22 @@ echo "---------- END OF COMMIT  ------------"
 
 
 # Check all tags created
+echo
+echo
+echo "LIST Of TAGS"
 git tag
 
 # Move back into the local-main branch
+echo
+echo
+echo "Moving to local-main branch"
 git checkout local-main 
 
 # Merge the last development branch onto local-main
-git merge dev-feature 		## NOTE: this should automatically update the remote repo because this branch is tracking remote/main
+echo
+echo
+echo "Merging last dev into local-main branch"
+git merge $current_branch 		## NOTE: this should automatically update the remote repo because this branch is tracking remote/main
 
 # Push latest changes from local-main to remote repo
 git push remote-testlab HEAD
