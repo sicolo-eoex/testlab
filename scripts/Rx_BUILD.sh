@@ -103,7 +103,7 @@ fi
 
 
 # Make development changes ....
-export source_dir="/home/eoex/Documents/Rx/DOJO/dev-src"
+export source_dir="/home/eoex/Documents/Rx/dev-src"
 export target_dir="/home/eoex/Documents/Rx/DOJO/TEMP/src"
 
 
