@@ -219,6 +219,24 @@ echo "Merging last dev into local-main branch"
 git merge $current_branch 		## NOTE: this should automatically update the remote repo because this branch is tracking remote/main
 
 # Push latest changes from local-main to remote repo
+echo
+echo
+echo "############ FINAL CHECK #######"
+echo
+echo "git fetch --all"
+git fetch --all
+echo
+echo "git config pull.rebase false"
+git config pull.rebase false
+echo
+echo "git pull remote-testlab"
+git pull remote-testlab
+echo
+echo "git push $remote HEAD"
 git push $remote HEAD
+echo
+echo
+
+
 
 git log --pretty=format:"%h - %an, %ar : %s"
