@@ -167,8 +167,6 @@ echo "Previous working branch:	"$previous_branch
 echo "Current working branch:	"$current_branch
 
 
-
-
 git checkout $current_branch
 git merge $previous_branch
 
