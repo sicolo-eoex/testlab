@@ -62,3 +62,6 @@ public class MyClass
 >>>>>>> dev-stash
 =======
 >>>>>>> dev-feature
+ String firstString = sos;
+		}
+	 
