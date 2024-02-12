@@ -7,7 +7,7 @@ export project_dir="/home/eoex/Documents/Rx/DOJO/TEMP"
 export script_dir="/home/eoex/Documents/Rx/DOJO/scripts"
 
 cd $project_dir
-chmod u+x $script_dir/*sh
+chmod u+x $script_dir/*.sh
 
 # Launch git init setup
  $script_dir/./Rx_setup.sh 
@@ -73,27 +73,23 @@ read -p "choose an option: " input
 if [ $input == 1 ]
 then
         export target_branch=$feature_branch
-	
-	echo "Make your development feature changes..."
-	git checkout $target_branch
+		echo "Make your development feature changes..."
+		git checkout $target_branch
 
 elif [ $input == 2 ];then
         export target_branch=$fix_branch
-
-	echo "Make your development fix changes..."
-	git checkout $target_branch
+		echo "Make your development fix changes..."
+		git checkout $target_branch
 
 elif [ $input == 3 ];then
         export target_branch=$stash_branch
-
-	echo "Creating a Savepoint (stash) for your current work..."
-	git checkout $target_branch
+		echo "Creating a Savepoint (stash) for your current work..."
+		git checkout $target_branch
 
 elif [ $input == 4 ];then
         export target_branch=$patch_branch
-
-	echo "Creating a new Patch..."
-	git checkout $target_branch
+		echo "Creating a new Patch..."
+		git checkout $target_branch
 fi
 
 
