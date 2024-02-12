@@ -23,7 +23,7 @@
     {
 
         // Prints "Hello, World" in the terminal window.
-        System.out.println("Hello, Sosthene");
+        System.out.println("Hello, Sostheneas");
     }
 
 }
