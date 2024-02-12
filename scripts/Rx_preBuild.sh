@@ -138,9 +138,12 @@ export commit_stamp="Stamp: $(date)"
 
 echo "Current Branch: $current_branch"
 git commit -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
+
 export current_commit_hash=$(git rev-parse --short HEAD)
 echo "Current commit HASH:	" $current_commit_hash
 git tag -a $current_branch-v$version.$reference-$us_code -m "$us_summary" $current_commit_hash
+echo
+echo "---------- END OF COMMIT  ------------"
 
 echo
 echo
@@ -154,11 +157,20 @@ echo "Current working branch:	"$current_branch
 
 git checkout $current_branch
 
-# git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 
+echo
+echo
+echo "[>> GIT PULL $REMOTE <<]"
 git pull $remote main --allow-unrelated-histories
+
+echo
+echo
+echo "[>> GIT MERGE $previous_branch <<]"
 git merge $previous_branch
-git push
+
+echo
+echo
+echo "[>> GIT PUSH remote-testlab <<]"
 git push remote-testlab HEAD
 
 
