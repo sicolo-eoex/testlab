@@ -154,10 +154,12 @@ echo "Current working branch:	"$current_branch
 
 git checkout $current_branch
 
-git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
+# git commit -a -m "$commit_ref $commit_dom $commit_US $commit_job $commit_stamp"
 
 git pull $remote main --allow-unrelated-histories
 git merge $previous_branch
+git push
+git push remote-testlab HEAD
 
 
 export current_commit_hash=$(git rev-parse --short HEAD)
