@@ -105,3 +105,6 @@ git remote -v
 git branch -a
 git branch -vv
 
+
+# start from the local main branch
+git checkout $local_main
