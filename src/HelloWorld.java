@@ -22,7 +22,7 @@
     {
 
         // Prints "Hello, World" in the terminal window.
-        System.out.println("Helldddffo, Sostheneas");
+        System.out.println("Hello, Ricardp");
     }
 
 }
